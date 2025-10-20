@@ -1,0 +1,79 @@
+# === Python and environment files ===
+__pycache__/
+*.py[cod]
+*.egg
+*.egg-info/
+.eggs/
+dist/
+build/
+*.so
+*.log
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# === Jupyter & IDE files ===
+.ipynb_checkpoints/
+*.ipynb_convert
+.vscode/
+.idea/
+*.swp
+
+# === OS generated files ===
+.DS_Store
+Thumbs.db
+
+# === Model and data artifacts ===
+# Model weights / quantized LLMs
+models/
+*.bin
+*.gguf
+*.pt
+*.pth
+*.h5
+
+# Large datasets or embeddings
+data/
+datasets/
+outputs/
+cache/
+*.npy
+*.npz
+*.pkl
+
+# Ollama downloads and runtime cache
+~/.ollama/
+ollama_models/
+ollama_cache/
+
+# === Logs and reports ===
+*.out
+*.log
+*.tmp
+logs/
+reports/
+benchmarks/
+
+# === Streamlit/Gradio runtime ===
+.streamlit/
+__temp__/
+.gradio/
+
+# === Environment and configuration ===
+.env
+.env.*
+*.json
+*.yaml
+*.yml
+*.cfg
+*.ini
+
+# === Misc ===
+*.bak
+*.old
+*.zip
+*.tar.gz
+*.7z
