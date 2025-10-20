@@ -1,6 +1,6 @@
 # Project: Private and Resource-Efficient Document Summarization
 
-## 📋 Prerequisites
+## Prerequisites
 - macOS 11+ (Apple Silicon M1/M2 preferred)
 - ≥ 8 GB RAM and ≈ 25 GB free disk space
 - Internet connection (for model downloads)
@@ -8,7 +8,7 @@
 
 ---
 
-## ⚙️ 1. Environment Setup
+## 1. Environment Setup
 
 
 ### 1.1 Install Homebrew (if missing)
