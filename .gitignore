@@ -65,7 +65,7 @@ __temp__/
 # === Environment and configuration ===
 .env
 .env.*
-*.json
+# *.json
 *.yaml
 *.yml
 *.cfg
