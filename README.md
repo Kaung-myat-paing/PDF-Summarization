@@ -1,77 +1,58 @@
-# Project: Private and Resource-Efficient Document Summarization
+# PDF Summarizer
 
-## Prerequisites
-- macOS 11+ (Apple Silicon M1/M2 preferred)
-- ≥ 8 GB RAM and ≈ 25 GB free disk space
-- Internet connection (for model downloads)
-- Command-line familiarity
+A private, local document summarization tool powered by Ollama, now featuring a modern React frontend and FastAPI backend.
 
----
+## ✨ Features
+- **Local Privacy**: All processing runs locally on your machine using Ollama.
+- **Modern UI**: Clean, responsive interface built with React, Tailwind CSS, and Shadcn/UI.
+- **Efficient Backend**: Fast extraction and summarization using Python and FastAPI.
+- **Drag & Drop**: Easy file upload support.
 
-## 1. Environment Setup
+## 🚀 Prerequisites
+- **Ollama**: Must be installed and running (`ollama serve`).
+- **Python 3.11+**: For the backend.
+- **Node.js 18+**: For the frontend.
 
+## 🛠️ Quick Start
 
-### 1.1 Install Homebrew (if missing)
+### 1. Start Ollama
+Ensure you have the model pulled:
 ```bash
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-brew update
-brew --version
+ollama pull llama3.2:1b
 ```
 
-### 1.2 Install Python 3.11 and Git LFS
+### 2. Run the Application
+We provide a helper script to start both backend and frontend:
 ```bash
-brew install python@3.11 git-lfs
-git lfs install
+chmod +x start.sh
+./start.sh
 ```
+This will start:
+- Backend at `http://localhost:8000`
+- Frontend at `http://localhost:5173`
 
-### 1.3 Create and Activate a Virtual Environment
+### Manual Setup
+
+**Backend:**
 ```bash
 python3.11 -m venv .venv
 source .venv/bin/activate
+pip install -r requirements.txt
+uvicorn backend.main:app --reload
 ```
 
-### 1.4 Install Ollama (Local Model Runtime)
+**Frontend:**
 ```bash
-brew install ollama
-brew services start ollama
-ollama version
+cd frontend
+npm install
+npm run dev
 ```
 
-### 1.5 (Recommended) Install PDF/OCR Utilities
-```bash
-brew install poppler tesseract
-```
+## 📂 Project Structure
+- `backend/`: FastAPI application and core logic.
+- `frontend/`: React application (Vite).
+- `src/`: Legacy scripts (kept for reference).
+- `outputs/`: Generated summaries and upload storage.
 
-## 2. Install Core Dependencies
-Activate your environment first:
-```bash
-source .venv/bin/activate
-pip install --upgrade pip
-```
-
-Then install all required packages:
-```bash
-pip install langchain langchain-community ollama
-pip install transformers==4.43.4 datasets evaluate
-pip install rouge-score bert-score
-pip install pdfplumber PyMuPDF
-pip install numpy pandas matplotlib tqdm
-```
-
----
-
-## 3. Download a Lightweight Model
-```bash
-ollama pull llama3.2:1b
-# or, for a slightly larger model:
-ollama pull mistral:7b
-```
-
-Verify available models:
-```bash
-ollama list
-```
-
----
-
-
+## 📝 License
+MIT
